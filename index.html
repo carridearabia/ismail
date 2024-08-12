@@ -3,114 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Calculator</title>
+    <title>Car Ride Arabia</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
 
-        .calculator {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px #aaa;
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
         }
 
-        .display {
-            width: 100%;
-            height: 40px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            text-align: right;
-            padding-right: 10px;
-            font-size: 20px;
+        header h1 {
+            margin: 0;
         }
 
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+        nav {
+            text-align: center;
+            margin: 20px 0;
         }
 
-        .buttons button {
-            height: 50px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            background-color: #4CAF50;
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-image: url('https://carridearabia.com/wp-content/uploads/2024/06/banner.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
+            padding: 100px 20px;
+            text-align: center;
         }
 
-        .buttons button.operator {
-            background-color: #f39c12;
+        .hero h2 {
+            font-size: 48px;
+            margin: 0;
         }
 
-        .buttons button.clear {
-            background-color: #e74c3c;
-            grid-column: span 2;
+        .hero p {
+            font-size: 24px;
+            margin: 20px 0 0;
         }
 
-        .buttons button.equals {
-            background-color: #3498db;
-            grid-column: span 2;
+        .services {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #fff;
         }
 
-        .buttons button:hover {
-            opacity: 0.8;
+        .service {
+            width: 30%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service h3 {
+            margin: 0 0 10px;
+        }
+
+        .service p {
+            margin: 0 0 20px;
+        }
+
+        .service a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .service a:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
 
-<div class="calculator">
-    <input type="text" class="display" id="display" disabled>
-    <div class="buttons">
-        <button class="clear" onclick="clearDisplay()">C</button>
-        <button class="operator" onclick="appendToDisplay('/')">/</button>
-        <button class="operator" onclick="appendToDisplay('*')">*</button>
-        <button onclick="appendToDisplay('7')">7</button>
-        <button onclick="appendToDisplay('8')">8</button>
-        <button onclick="appendToDisplay('9')">9</button>
-        <button class="operator" onclick="appendToDisplay('-')">-</button>
-        <button onclick="appendToDisplay('4')">4</button>
-        <button onclick="appendToDisplay('5')">5</button>
-        <button onclick="appendToDisplay('6')">6</button>
-        <button class="operator" onclick="appendToDisplay('+')">+</button>
-        <button onclick="appendToDisplay('1')">1</button>
-        <button onclick="appendToDisplay('2')">2</button>
-        <button onclick="appendToDisplay('3')">3</button>
-        <button class="equals" onclick="calculateResult()">=</button>
-        <button onclick="appendToDisplay('0')">0</button>
-        <button onclick="appendToDisplay('.')">.</button>
+<header>
+    <h1>Car Ride Arabia</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>Explore Makkah with Our Premium Car Rental and Chauffeur Services</h2>
+    <p>Reliable, Comfortable, and Affordable Rides for Every Journey</p>
+</section>
+
+<section class="services" id="services">
+    <div class="service">
+        <h3>Luxury Cars</h3>
+        <p>Travel in style with our fleet of luxury vehicles. Perfect for business trips or special occasions.</p>
+        <a href="#contact">Book Now</a>
     </div>
-</div>
+    <div class="service">
+        <h3>Family Vans</h3>
+        <p>Spacious vans for family trips and group travels. Enjoy comfort and convenience on the road.</p>
+        <a href="#contact">Book Now</a>
+    </div>
+    <div class="service">
+        <h3>24/7 Service</h3>
+        <p>We operate around the clock to meet your transportation needs at any time of the day or night.</p>
+        <a href="#contact">Book Now</a>
+    </div>
+</section>
 
-<script>
-    function appendToDisplay(value) {
-        document.getElementById("display").value += value;
-    }
-
-    function clearDisplay() {
-        document.getElementById("display").value = "";
-    }
-
-    function calculateResult() {
-        const display = document.getElementById("display");
-        try {
-            display.value = eval(display.value);
-        } catch (e) {
-            display.value = "Error";
-        }
-    }
-</script>
+<footer>
+    <p>© 2024 Car Ride Arabia. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
